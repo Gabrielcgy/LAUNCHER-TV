@@ -1,0 +1,6 @@
+{
+  "name": "Android TV Launcher",
+  "description": "Un launcher de Android TV ultra-ligero y optimizado con sistema de actualización automática.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

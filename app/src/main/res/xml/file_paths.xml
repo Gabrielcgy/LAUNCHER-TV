@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Permite compartir archivos guardados en context.cacheDir -->
+    <cache-path name="update_cache" path="." />
+    <!-- Permite compartir archivos guardados en context.externalCacheDir -->
+    <external-cache-path name="update_external_cache" path="." />
+</paths>

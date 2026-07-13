@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Focused State: Show bright glowing border -->
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#2200E5FF" /> <!-- Semi-transparent cyan glow fill -->
+            <stroke android:width="3dp" android:color="#00E5FF" /> <!-- Bright cyan stroke -->
+            <corners android:radius="12dp" />
+        </shape>
+    </item>
+    
+    <!-- Default State: Transparent background -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent" />
+            <stroke android:width="3dp" android:color="@android:color/transparent" />
+            <corners android:radius="12dp" />
+        </shape>
+    </item>
+</selector>
