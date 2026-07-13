@@ -1,7 +1,7 @@
 name: Compilar APK Android
 
 on:
-  workflow_dispatch: # Esto es lo que hace aparecer el botón de "Run workflow"
+  workflow_dispatch:
 
 jobs:
   build:
@@ -17,11 +17,13 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    - name: Dar permisos a Gradle
-      run: chmod +x gradlew
+    - name: Instalar Motor Gradle
+      uses: gradle/actions/setup-gradle@v3
+      with:
+        gradle-version: '8.4'
 
     - name: Compilar el APK
-      run: ./gradlew assembleDebug
+      run: gradle assembleDebug
 
     - name: Subir APK para descargar
       uses: actions/upload-artifact@v4
