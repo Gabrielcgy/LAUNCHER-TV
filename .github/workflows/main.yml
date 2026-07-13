@@ -1,0 +1,31 @@
+name: Compilar APK Android
+
+on:
+  workflow_dispatch: # Esto es lo que hace aparecer el botón de "Run workflow"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Descargar el código
+      uses: actions/checkout@v4
+
+    - name: Configurar Java
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
+    - name: Dar permisos a Gradle
+      run: chmod +x gradlew
+
+    - name: Compilar el APK
+      run: ./gradlew assembleDebug
+
+    - name: Subir APK para descargar
+      uses: actions/upload-artifact@v4
+      with:
+        name: Launcher-TV-APK
+        path: app/build/outputs/apk/debug/app-debug.apk
+        
